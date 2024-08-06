@@ -1,10 +1,11 @@
-// const itemForm = document.getElementById('item-form');
-// const itemInput = document.getElementById('item-input');
+const itemForm = document.getElementById('item-form');
+const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
+const items = itemList.querySelectorAll("li")
 const clearBtn = document.getElementById('clear');
 const filterBlock = document.querySelector('.filter');
  const itemFilter = document.getElementById('filter');
-// const formBtn = itemForm.querySelector('button');
+const formBtn = itemForm.querySelector('button');
 let isEditMode = false;
 
 // function displayItems() {
@@ -213,6 +214,14 @@ let isEditMode = false;
 // );
 
 
+
+
+
+
+//
+
+
+
 function clearItems(){
   // itemList.innerHTML = "";
 while(itemList.firstChild){
@@ -224,10 +233,14 @@ while(itemList.firstChild){
   );
   clearBtn.remove();
 }
-
 clearBtn.addEventListener("click",clearItems
 );
 
+// Form submission
+const formSubmit = (e) => {
+e.preventDefault();
+}
+itemForm.addEventListener("submit",formSubmit);
 
 
 
@@ -250,56 +263,3 @@ clearBtn.addEventListener("click",clearItems
 
 
 
-//Practice Learn
-
-// const img= document.querySelector("img");
-
-
-// const singleClick = (e)=>{
-
-// console.log("SingleClick")
-
-// };
-// const doubleClick = ()=>{
-//   console.log("DoubleClick")
-
-// };
-// const rightClick = ()=>{
-//   console.log("RightClick")
-
-// };
-// const mouseDown = ()=>{
-//   console.log("MouseDown")
-
-// };
-// const mouseUp = ()=>{
-//   console.log("MouseUp")
-
-// };
-
-// const mouseMove = ()=>console.log("MouseMove");
-// const mouseOver = ()=> console.log("MouseOver");
-// const mouseOut = () =>  console.log("MouseOut");
-// const dragStart = () =>  console.log("Drag Start");
-// const dragEnd = () =>  console.log("Drag End");
-// const dragEnter = () =>  console.log("Drag Enter");
-// const dragOver = () =>  console.log("Drag Over");
-
-// img.addEventListener("click",singleClick);
-// img.addEventListener("dblclick",doubleClick);
-// img.addEventListener("contextmenu",rightClick);
-// img.addEventListener("mousedown",mouseDown);
-// img.addEventListener("mouseup",mouseUp);
-// img.addEventListener("mousemove",mouseMove);
-// img.addEventListener("mouseover",mouseOver);
-// img.addEventListener("mouseout",mouseOut);
-// img.addEventListener("dragstart",dragStart);
-// img.addEventListener("dragend",dragEnd);
-// img.addEventListener("dragenter",dragEnter);
-// img.addEventListener("dragover",dragOver);
-
-
-// setTimeout(()=>{
-//   clearBtn.removeEventListener("click",clearItems
-//   );
-// },5000)
